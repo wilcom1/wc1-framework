@@ -16,6 +16,7 @@
 - Use conventional commits: feat:, fix:, docs:, refactor:, test:
 - Keep commits focused and atomic
 - Reference issues when applicable
+- All git operations must be authorized by the user. Never perform them automatically.
 
 ## Quality
 - Run linter before committing
