@@ -3,6 +3,17 @@
 const fs = require('fs');
 const path = require('path');
 
+function findPackageRoot() {
+  let dir = __dirname;
+  while (dir !== path.dirname(dir)) {
+    if (fs.existsSync(path.join(dir, 'package.json'))) {
+      return dir;
+    }
+    dir = path.dirname(dir);
+  }
+  return __dirname;
+}
+
 const args = process.argv.slice(2);
 const command = args[0];
 const projectName = args[1];
@@ -15,7 +26,8 @@ if (command === 'init') {
   }
 
   const targetDir = path.join(process.cwd(), projectName);
-  const templateDir = path.join(__dirname, '..', 'templates', 'base');
+  const packageRoot = findPackageRoot();
+  const templateDir = path.join(packageRoot, 'templates', 'base');
 
   if (fs.existsSync(targetDir)) {
     console.error(`Error: La carpeta "${projectName}" ya existe`);
