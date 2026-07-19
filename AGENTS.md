@@ -17,6 +17,7 @@
 - Keep commits focused and atomic
 - Reference issues when applicable
 - All git operations must be authorized by the user. Never perform them automatically.
+- OpenCode never will access or show the keys, secrets or passwords of user.
 
 ## Quality
 - Run linter before committing
