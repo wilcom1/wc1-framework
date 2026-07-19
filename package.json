@@ -1,0 +1,32 @@
+{
+  "name": "wc1-framework",
+  "version": "1.0.1",
+  "description": "Framework base para proyectos desarrollados con opencode",
+  "main": "opencode.json",
+  "bin": {
+    "wc1": "./bin/wc1.js"
+  },
+  "keywords": [
+    "opencode",
+    "framework",
+    "templates",
+    "development"
+  ],
+  "author": "wilcom1",
+  "license": "MIT",
+  "files": [
+    "opencode.json",
+    "AGENTS.md",
+    "README.md",
+    ".opencode/",
+    "templates/",
+    "bin/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilcom1/wc1-framework.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
