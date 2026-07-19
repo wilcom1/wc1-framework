@@ -1,6 +1,6 @@
 {
   "name": "wc1-framework",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Framework base para proyectos desarrollados con opencode",
   "main": "opencode.json",
   "bin": "bin/wc1.js",

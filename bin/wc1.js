@@ -14,11 +14,20 @@ function findPackageRoot() {
   return __dirname;
 }
 
+function getVersion() {
+  const packageRoot = findPackageRoot();
+  const packageJson = JSON.parse(fs.readFileSync(path.join(packageRoot, 'package.json'), 'utf8'));
+  return packageJson.version;
+}
+
 const args = process.argv.slice(2);
 const command = args[0];
-const projectName = args[1];
 
-if (command === 'init') {
+if (command === '-v' || command === '--version') {
+  console.log(getVersion());
+} else if (command === 'init') {
+  const projectName = args[1];
+
   if (!projectName) {
     console.error('Error: Debes especificar el nombre del proyecto');
     console.error('Uso: wc1 init <nombre-proyecto>');
@@ -64,6 +73,8 @@ if (command === 'init') {
   console.log(`  opencode`);
 } else {
   console.error(`Comando desconocido: ${command}`);
-  console.error('Uso: wc1 init <nombre-proyecto>');
+  console.error('Uso:');
+  console.error('  wc1 init <nombre-proyecto>  Crear nuevo proyecto');
+  console.error('  wc1 -v                     Mostrar versión');
   process.exit(1);
 }
