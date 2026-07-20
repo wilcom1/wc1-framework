@@ -1,9 +1,11 @@
 {
   "name": "wc1-framework",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Framework base para proyectos desarrollados con opencode",
   "main": "opencode.json",
-  "bin": "bin/wc1.js",
+  "bin": {
+    "wc1": "bin/wc1.js"
+  },
   "keywords": [
     "opencode",
     "framework",
